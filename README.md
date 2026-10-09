@@ -1,183 +1,315 @@
 # 🛡️ Insurance Claim Intelligence
+### Machine Learning-Based Insurance Fraud Detection & Risk Analysis
 
-An interactive **Machine Learning + Data Analytics** application for exploring insurance claims and estimating patterns associated with reported fraud. Built with Python, Pandas, Scikit-learn, and Streamlit.
+An interactive machine learning application built with **Python, Scikit-learn, and Streamlit** to explore insurance claims, analyze fraud patterns, estimate potential fraud risk, and evaluate machine learning model performance through a professional analytics dashboard.
 
-> **Responsible-use notice:** This is an educational portfolio project, not a validated insurance fraud investigation system. A model prediction is not proof of fraud and must never be used as the sole basis to approve, deny, delay, or investigate a real claim. Real-world decisions require verified evidence, human review, independent validation, privacy safeguards, and compliance with applicable law.
+[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 
+---
 ## 🚀 Live Demo
 
-**Streamlit App:** _Add your deployed Streamlit URL here after deployment. (Streamlit Community Cloud will provide this URL.)_
+Experience the **Insurance Claim Intelligence** application live:
 
-## ✨ Features
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://insuranceclaimprediction-cfsgt4y5wycey3zujyrmjr.streamlit.app/)
 
-- **Interactive overview:** total claims, reported-fraud share, and dataset health indicators.
-- **Claim explorer:** filter by incident type, incident severity, and target label.
-- **Data visualizations:** class distribution, claim amount summaries, incident patterns, and claim amount boxplots.
-- **Interactive prediction form:** enter policy and incident details to obtain a model-estimated result.
-- **Model comparison:** Random Forest and Gradient Boosting evaluated on a held-out test set.
-- **Performance reporting:** Accuracy, Precision, Recall, F1 score, classification report, and confusion matrix.
-- **Download filtered records:** export the currently filtered dataset as CSV.
-- **Cloud-ready structure:** trained model and metrics are stored separately from application code.
+🔗 **Live Application:** https://insuranceclaimprediction-cfsgt4y5wycey3zujyrmjr.streamlit.app/
 
-## 🖼️ Application Screenshots
+Explore interactive insurance claim analytics, investigate reported-fraud patterns, generate model-based claim predictions, and review machine learning performance metrics.
+## 📌 Project Overview
 
-After running and deploying the app, capture screenshots and upload them to the `screenshots/` folder using these filenames.
+Insurance fraud can increase financial losses and complicate the claims assessment process. This project demonstrates how machine learning and interactive data visualization can support the analysis of insurance claims and identify patterns associated with reported fraud.
 
-| Overview | Claim Explorer |
-|---|---|
-| `screenshots/home.png` | `screenshots/eda.png` |
+The application provides an integrated dashboard for exploring claim records, entering claim details for model-based predictions, and reviewing model evaluation metrics.
 
-| Claim Prediction | Model Performance |
-|---|---|
-| `screenshots/prediction.png` | `screenshots/model_performance.png` |
+### 🎯 Objectives
 
-To display the images here after uploading them, add:
+- Analyze insurance claim characteristics and incident patterns.
+- Explore claim amounts, incident types, and severity distributions.
+- Predict whether a claim resembles the reported-fraud class learned from historical data.
+- Compare machine learning models using standard evaluation metrics.
+- Present analytical results through a user-friendly Streamlit interface.
 
-```markdown
-![Overview](screenshots/home.png)
-![Claim Explorer](screenshots/eda.png)
-![Claim Prediction](screenshots/prediction.png)
-![Model Performance](screenshots/model_performance.png)
-```
+---
 
-## 🧰 Tech Stack
+## ✨ Key Features
 
-- **Language:** Python
-- **App:** Streamlit
-- **Data handling:** Pandas, NumPy
-- **Machine learning:** Scikit-learn
-- **Visual analytics:** Matplotlib, Seaborn
-- **Model persistence:** Joblib
-- **Dataset format:** Excel (`.xlsx`)
+- **Interactive Dashboard:** Summary statistics and insurance claim insights.
+- **Explore Claims:** Filter claims by incident type, incident severity, and fraud label.
+- **Claim Risk Prediction:** Enter claim details and receive a machine learning prediction.
+- **Model Performance:** Review accuracy, precision, recall, F1-score, and model comparison results.
+- **Data Visualization:** Charts for claim amount distributions, incident categories, and reported fraud patterns.
+- **Filtered Data Export:** Download filtered claim records as a CSV file.
+- **Professional Interface:** Organized navigation, clear KPI cards, and consistent styling.
 
-## 📊 Dataset
+---
 
-The included dataset contains **1,000 rows and 39 columns**. The target column is `fraud_reported`:
+## 🖥️ Application Screenshots
 
-- `Y` — fraud reported in the dataset
-- `N` — no fraud reported in the dataset
+### 1. Overview Dashboard
 
-The dataset contains policy, insured-customer, incident, vehicle, and claim information. The target describes the recorded label in this dataset; it should not be interpreted as a definitive real-world finding.
+![Insurance Claim Intelligence Overview](screenshots/overview.png)
 
-## ⚙️ Machine Learning Workflow
+The overview page presents key claim statistics and visual summaries to support an initial understanding of the dataset.
 
-1. Load the Excel dataset and replace placeholder missing values (`?`).
-2. Separate the target `fraud_reported` from input features.
-3. Remove direct identifiers and free-text location fields from the model features.
-4. Split the data into training and test sets using stratification.
-5. Impute missing numeric and categorical values within a scikit-learn pipeline.
-6. One-hot encode categorical features, handling unseen categories safely.
-7. Train and compare Random Forest and Gradient Boosting classifiers.
-8. Compare test-set Accuracy, Precision, Recall, and F1 score.
-9. Select the model with the highest test-set F1 score and save the model pipeline and evaluation metrics.
+### 2. Explore Claims
 
-## 📈 Evaluation Metrics
+![Explore Insurance Claims](screenshots/explore_claims.png)
 
-- **Accuracy:** proportion of all test examples predicted correctly.
-- **Precision:** proportion of predicted fraud cases that are labelled fraud in the test data.
-- **Recall:** proportion of labelled fraud cases identified by the model.
-- **F1 score:** harmonic mean of Precision and Recall.
+Explore claim records using interactive filters and examine incident patterns and claim amount statistics.
 
-Because fraud cases are the minority class in this dataset, accuracy alone is not enough to assess usefulness. Review Precision, Recall, F1 score, and the confusion matrix together.
+### 3. Predict Claim
 
-## 📁 Project Structure
+![Insurance Claim Prediction](screenshots/predict_claim.png)
+
+Enter claim characteristics to obtain a prediction from the trained machine learning pipeline.
+
+### 4. Model Performance
+
+![Model Performance Dashboard](screenshots/model_performance.png)
+
+Review model evaluation metrics and compare the performance of the candidate algorithms.
+
+### 5. Incident Types
+
+![Incident Types Analysis](screenshots/incident_types.png)
+
+Visualize the distribution of different incident categories in the dataset.
+
+### 6. Incident Severity and Reported Fraud
+
+![Incident Severity by Reported Fraud](screenshots/Incident%20severity%20by%20reported%20fraud.png)
+
+Analyze the relationship between incident severity and the reported-fraud label.
+
+### 7. Claim Amount Distribution
+
+![Claim Amount Distribution](screenshots/Claim%20amount%20distribution.png)
+
+Examine the distribution of insurance claim amounts to understand claim-value patterns.
+
+### 8. Target Distribution
+
+![Fraud Target Distribution](screenshots/target_distribution.png)
+
+Understand the distribution of the target variable and the balance between reported-fraud and non-fraud records.
+
+### 9. Incident Details
+
+![Incident Details](screenshots/incident_details.png)
+
+Inspect additional incident-related information available in the dashboard.
+
+### 10. Claim Risk Estimate
+
+![Claim Risk Estimate](screenshots/estimate_claim_risk.png)
+
+View the claim risk estimation interface and its prediction output.
+
+---
+
+## 🧠 Machine Learning Approach
+
+The project evaluates two supervised machine learning algorithms:
+
+1. **Random Forest Classifier**
+2. **Gradient Boosting Classifier**
+
+The training pipeline includes:
+
+- Handling missing values using imputation.
+- Encoding categorical features.
+- Transforming numerical and categorical data using a preprocessing pipeline.
+- Splitting data into training and testing sets.
+- Evaluating candidate models on held-out test data.
+- Selecting the model based on test-set F1-score.
+
+The selected model and evaluation metrics are saved for use in the Streamlit application.
+
+### 📊 Model Evaluation Results
+
+The following metrics were recorded during the local test run:
+
+| Metric | Random Forest | Gradient Boosting |
+|---|---:|---:|
+| Accuracy | 80.40% | 80.80% |
+| Precision | 62.26% | 60.94% |
+| Recall | 53.23% | 62.90% |
+| F1-score | 57.39% | 61.90% |
+
+**Selected model:** Gradient Boosting Classifier, based on the higher test-set F1-score.
+
+*Note: These are results from one local train/test split. They do not guarantee performance on unseen real-world insurance claims.*
+
+---
+
+## 🗂️ Project Structure
 
 ```text
 INSURANCE_CLAIM_PREDICTION/
+│
 ├── app.py
 ├── train_model.py
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
+│
 ├── data/
 │   └── insurance_claims.xlsx
-└── models/
-    ├── insurance_fraud_model.joblib
-    └── metrics.json
+│
+├── models/
+│   ├── insurance_fraud_model.joblib
+│   ├── metrics.json
+│   └── README.txt
+│
+└── screenshots/
+    ├── overview.png
+    ├── explore_claims.png
+    ├── predict_claim.png
+    ├── model_performance.png
+    ├── incident_types.png
+    ├── target_distribution.png
+    ├── incident_details.png
+    ├── estimate_claim_risk.png
+    ├── Claim amount distribution.png
+    └── Incident severity by reported fraud.png
 ```
 
-## 💻 Run Locally
+---
 
-### 1. Clone the repository
+## ⚙️ Technologies Used
 
-Replace `YOUR_GITHUB_USERNAME` with your GitHub username:
+| Technology | Purpose |
+|---|---|
+| Python | Application development |
+| Streamlit | Interactive web application |
+| Pandas | Data manipulation and analysis |
+| NumPy | Numerical computing |
+| Scikit-learn | Machine learning and preprocessing |
+| Joblib | Model serialization and loading |
+| Matplotlib | Data visualization |
+| Seaborn | Statistical visualization |
+| OpenPyXL | Excel dataset support |
+
+---
+
+## 🚀 Installation and Setup
+
+### Prerequisites
+
+- Python 3.12
+- pip package manager
+- Git (optional, for cloning the repository)
+
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/priyadharshini2002-source/insurance-claim-prediction.git
-cd insurance-claim-prediction
+git clone https://github.com/priyadharshini2002-source/INSURANCE_CLAIM_PREDICTION.git
 ```
 
-### 2. Create and activate a virtual environment (recommended)
-
-**Windows PowerShell**
-```powershell
-py -m venv .venv
-.venv\Scripts\Activate.ps1
-```
-
-**macOS / Linux**
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-### 3. Install dependencies
+### 2. Navigate to the Project Directory
 
 ```bash
-pip install -r requirements.txt
+cd INSURANCE_CLAIM_PREDICTION
 ```
 
-### 4. Train the model
+If the application files are inside an inner `INSURANCE_CLAIM_PREDICTION` directory, navigate into that directory before running the commands below.
+
+### 3. Install Dependencies
 
 ```bash
-python train_model.py
+py -3.12 -m pip install -r requirements.txt
 ```
 
-This generates:
+Use a compatible scikit-learn version when loading the saved model. The current model was successfully loaded locally using scikit-learn 1.8.0.
 
-- `models/insurance_fraud_model.joblib`
-- `models/metrics.json`
-
-### 5. Launch the Streamlit app
+### 4. Run the Application
 
 ```bash
-streamlit run app.py
+py -3.12 -m streamlit run app.py
 ```
 
-Open the local URL printed in the terminal.
+### 5. Open in Your Browser
 
-## ☁️ Deploy on Streamlit Community Cloud
+Visit:
 
-1. Create a GitHub repository named `insurance-claim-prediction`.
-2. Upload the project files and commit them.
-3. Confirm that `app.py`, `requirements.txt`, `data/insurance_claims.xlsx`, `models/insurance_fraud_model.joblib`, and `models/metrics.json` are in the repository.
-4. Open Streamlit Community Cloud and choose **Create app**.
-5. Select your repository, branch, and `app.py` as the main file.
-6. Deploy, then add the resulting public URL to the Live Demo section above.
+```text
+http://localhost:8501
+```
 
-If you change the training code, rerun `python train_model.py` and commit the newly generated model and metrics.
+---
+
+## 🔄 Retrain the Model
+
+To train the candidate models again and save the selected model:
+
+```bash
+py -3.12 train_model.py
+```
+
+The script saves the trained model to `models/insurance_fraud_model.joblib` and evaluation metrics to `models/metrics.json`.
+
+Ensure that the dataset is available at the path expected by `train_model.py`.
+
+---
+
+## ☁️ Deployment
+
+This application can be deployed using Streamlit Community Cloud.
+
+1. Push the project files to GitHub.
+2. Open [Streamlit Community Cloud](https://share.streamlit.io/).
+3. Create a new app and connect your GitHub repository.
+4. Select the correct branch.
+5. Set the main file path to `app.py` or `INSURANCE_CLAIM_PREDICTION/app.py`, depending on your repository structure.
+6. Confirm the required dependencies and compatible Python version.
+7. Deploy the application.
+
+**Important:** Ensure that the selected model file, `requirements.txt`, and dataset paths match the repository structure. Test the deployed app after deployment.
+
+### Live Demo
+
+Add your deployed Streamlit URL here once it is working:
+
+`https://your-streamlit-app-url`
+
+---
+
+## 🔐 Responsible Use and Limitations
+
+- This project is intended for educational and analytical demonstration.
+- A prediction represents a model estimate based on patterns learned from the training data; it does not establish that fraud has occurred.
+- Model performance can be affected by class imbalance, data quality, and differences between training data and real-world claims.
+- Predictions should not be used as the sole basis for rejecting, delaying, or denying insurance claims.
+- Any real-world application requires validation, fairness assessment, privacy safeguards, and qualified human review.
+
+---
 
 ## 🔮 Future Enhancements
 
-- Add cross-validation and threshold tuning for the minority class.
-- Add calibration analysis and precision-recall curves.
-- Add explainability tools to help reviewers understand influential features.
-- Add data drift monitoring and an independent external validation set.
-- Add audit logging, access controls, and privacy protections before any real-world pilot.
+- Add explainability with SHAP or feature importance visualizations.
+- Evaluate models using cross-validation and precision-recall curves.
+- Improve prediction calibration and threshold selection.
+- Add automated data-quality checks.
+- Introduce secure database integration and audit logging.
+- Enhance accessibility and responsive dashboard design.
 
-## ⚠️ Limitations
-
-- Results depend on the quality, size, and representativeness of the provided dataset.
-- Test-set performance does not guarantee future or real-world performance.
-- Categorical patterns can change between datasets and over time.
-- False positives and false negatives are possible.
-- A high-risk estimate is not proof of wrongdoing.
+---
 
 ## 👩‍💻 Author
 
-**Priyadharshini S.**  
+**Priyadharshini S.**
+
 MSc Data Science | Machine Learning | Data Analytics
 
-## 📄 License
+GitHub: [@priyadharshini2002-source](https://github.com/priyadharshini2002-source)
 
-No license is included by default. Add a `LICENSE` file if you want to grant others explicit permission to reuse, modify, or distribute the code.
+---
+
+## ⭐ Acknowledgements
+
+This project was developed as a machine learning and data analytics application to demonstrate insurance claim exploration, reported-fraud prediction, and model evaluation.
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
